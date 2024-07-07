@@ -2,7 +2,7 @@
 #include <string>
 using namespace std;
 
-// Define a Node structure for linked list
+
 struct Node {
     int id;
     int date;
@@ -82,7 +82,7 @@ void Hotel::insert() {
     cout << "\nEnter Room ID: ";
     cin >> new_node->id;
 
-    cin.ignore(); // Clear the input buffer
+    cin.ignore(); 
 
     cout << "\nEnter Customer Name: ";
     getline(cin, new_node->name);
@@ -90,7 +90,7 @@ void Hotel::insert() {
     cout << "\nEnter Allocation Date: ";
     cin >> new_node->date;
 
-    cin.ignore(); // Clear the input buffer
+    cin.ignore(); 
 
     cout << "\nEnter Room Type (single/double/twin): ";
     getline(cin, new_node->roomtype);
@@ -127,7 +127,7 @@ void Hotel::search() {
                 cout << "\n\nRoom Allocation Date: " << ptr->date;
                 cout << "\n\nRoom Type: " << ptr->roomtype << endl;
                 found = true;
-                break; // Exit loop after finding the record
+                break; 
             }
             ptr = ptr->next;
         }
@@ -152,7 +152,7 @@ void Hotel::update() {
                 cout << "\n\nEnter Updated Room ID: ";
                 cin >> ptr->id;
 
-                cin.ignore(); // Clear the input buffer
+                cin.ignore(); 
 
                 cout << "\n\nEnter Updated Customer Name: ";
                 getline(cin, ptr->name);
@@ -160,14 +160,14 @@ void Hotel::update() {
                 cout << "\n\nEnter Updated Allocation Date: ";
                 cin >> ptr->date;
 
-                cin.ignore(); // Clear the input buffer
+                cin.ignore(); 
 
                 cout << "\n\nEnter Updated Room Type: ";
                 getline(cin, ptr->roomtype);
 
                 cout << "\n\n\t\t Update Record Successfully" << endl;
                 found = true;
-                break; // Exit loop after update
+                break; 
             }
             ptr = ptr->next;
         }
@@ -190,7 +190,7 @@ void Hotel::remove() {
         bool found = false;
         while (ptr != NULL) {
             if (t_id == ptr->id) {
-                if (prev == NULL) { // If the node to be deleted is the head node
+                if (prev == NULL) { 
                     head = ptr->next;
                 } else {
                     prev->next = ptr->next;
@@ -198,7 +198,7 @@ void Hotel::remove() {
                 delete ptr;
                 cout << "\n\nRoom Record Deleted Successfully" << endl;
                 found = true;
-                break; // Exit loop after deletion
+                break; 
             }
             prev = ptr;
             ptr = ptr->next;
@@ -230,7 +230,7 @@ void Hotel::sort() {
         cout << "\n\nLinkedList is Empty" << endl;
         return;
     }
-    // Bubble sort based on Room ID (you can use any sorting algorithm as per your requirement)
+
     Node* ptr;
     Node* last = NULL;
     bool swapped;
