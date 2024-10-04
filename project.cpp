@@ -365,7 +365,7 @@ void Hotel::sort() {
 
                     swapped = true;
                 }
-                ptr = ptr->next;
+                ptr = ptr->next; 
             }
             last = ptr;
         } while (swapped);
